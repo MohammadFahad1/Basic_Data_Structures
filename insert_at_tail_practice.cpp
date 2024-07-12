@@ -30,7 +30,7 @@ void insert_at_tail(Node *&head, int val)
     Node *newNode = new Node(val);
     if (head == NULL)
     {
-        head = newNode;
+        head->next = newNode;
         return;
     }
 

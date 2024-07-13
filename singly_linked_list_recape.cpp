@@ -72,6 +72,20 @@ void insert_at_tail(Node *&head, Node *&Tail, int val)
          << "Inserted at Tail" << endl;
 }
 
+void delete_at_position(Node *head, int pos)
+{
+    Node *tmp = head;
+    for (int i = 1; i <= pos - 1; i++)
+    {
+        tmp = tmp->next;
+    }
+    Node *deletedNode = tmp->next;
+    tmp->next = tmp->next->next;
+    delete deletedNode;
+    cout << endl
+         << "Node Deleted" << endl;
+}
+
 int main()
 {
     Node *head = new Node(5);
@@ -88,19 +102,31 @@ int main()
     c->next = d;
     d->next = e;
 
+    int op;
+    cin >> op;
+    if (op == 1)
+    {
+        int pos, val;
+        cout << "Enter Position and Value: ";
+        cin >> pos >> val;
+        if (pos > size(head))
+            cout << "Invalid Index";
+        else if (pos == 0)
+            insert_at_head(head, val);
+        else if (pos == size(head))
+            insert_at_tail(head, Tail, val);
+        else if (pos > 0 && pos <= size(head))
+            insert_at_position(head, pos, val);
+    }
+    else if (op == 2)
+    {
+        cout << endl
+             << "Enter Index to Delete: ";
+        int pos;
+        cin >> pos;
+        delete_at_position(head, pos);
+    }
     // Print Linked List
-    int pos, val;
-    cout << "Enter Position and Value: ";
-    cin >> pos >> val;
-    if (pos > size(head))
-        cout << "Invalid Index";
-    else if (pos == 0)
-        insert_at_head(head, val);
-    else if (pos == size(head))
-        insert_at_tail(head, Tail, val);
-    else if (pos > 0 && pos <= size(head))
-        insert_at_position(head, pos, val);
-
     print_linked_list(head);
 
     return 0;

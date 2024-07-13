@@ -96,6 +96,10 @@ void delete_head(Node *&head)
          << "Head Deleted" << endl;
 }
 
+void insert_linked_list(Node *head, Node *Tail, int val)
+{
+}
+
 int main()
 {
     Node *head = new Node(5);
@@ -155,7 +159,7 @@ int main()
         cout << endl
              << "Enter Value: ";
         cin >> val;
-        // insert_linked_list(head, Tail, val);
+        insert_linked_list(head, Tail, val);
     }
 
     // Print Linked List

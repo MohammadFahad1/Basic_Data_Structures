@@ -155,7 +155,7 @@ int main()
         cout << endl
              << "Enter Value: ";
         cin >> val;
-        insert_linked_list(head, Tail, val);
+        // insert_linked_list(head, Tail, val);
     }
 
     // Print Linked List

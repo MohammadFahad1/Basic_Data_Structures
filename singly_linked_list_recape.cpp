@@ -115,6 +115,7 @@ int main()
     cout << endl
          << "Option 1: Insert at any Position" << endl;
     cout << "Option 2: Delete at any Position" << endl;
+    cout << "Option 3: Insert at Tail" << endl;
 
     cout << endl
          << "Enter any Option: ";
@@ -147,6 +148,14 @@ int main()
             delete_head(head);
         else
             delete_at_position(head, pos);
+    }
+    else if (op == 3)
+    {
+        int val;
+        cout << endl
+             << "Enter Value: ";
+        cin >> val;
+        insert_linked_list(head, Tail, val);
     }
 
     // Print Linked List

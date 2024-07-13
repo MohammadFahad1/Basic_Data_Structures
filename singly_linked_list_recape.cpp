@@ -25,6 +25,30 @@ void print_linked_list(Node *head)
     cout << endl;
 }
 
+int size(Node *head)
+{
+    Node *tmp = head;
+    int count = 0;
+    while (tmp != NULL)
+    {
+        count++;
+        tmp = tmp->next;
+    }
+    return count;
+}
+
+void insert_at_position(Node *head, int pos, int v)
+{
+    Node *newNode = new Node(v);
+    Node *tmp = head;
+    for (int i = 1; i <= pos - 1; i++)
+    {
+        tmp = tmp->next;
+    }
+    newNode->next = tmp->next;
+    tmp->next = newNode;
+}
+
 int main()
 {
     Node *head = new Node(5);
@@ -41,6 +65,14 @@ int main()
     d->next = e;
 
     // Print Linked List
+    int pos, val;
+    cout << "Enter Position and Value: ";
+    cin >> pos >> val;
+    if (pos > size(head))
+        cout << "Invalid Index";
+    else
+        insert_at_position(head, pos, val);
+
     print_linked_list(head);
 
     return 0;

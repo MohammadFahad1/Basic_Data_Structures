@@ -124,7 +124,11 @@ int main()
              << "Enter Index to Delete: ";
         int pos;
         cin >> pos;
-        delete_at_position(head, pos);
+        if (pos >= size(head))
+            cout << endl
+                 << "Invalid Index" << endl;
+        else
+            delete_at_position(head, pos);
     }
     // Print Linked List
     print_linked_list(head);

@@ -86,6 +86,16 @@ void delete_at_position(Node *head, int pos)
          << "Node Deleted" << endl;
 }
 
+void delete_head(Node *&head)
+{
+    Node *deletedNode = head;
+    head = head->next;
+    delete deletedNode;
+
+    cout << endl
+         << "Head Deleted" << endl;
+}
+
 int main()
 {
     Node *head = new Node(5);
@@ -102,6 +112,12 @@ int main()
     c->next = d;
     d->next = e;
 
+    cout << endl
+         << "Option 1: Insert at any Position" << endl;
+    cout << "Option 2: Delete at any Position" << endl;
+
+    cout << endl
+         << "Enter any Option: ";
     int op;
     cin >> op;
     if (op == 1)
@@ -124,12 +140,15 @@ int main()
              << "Enter Index to Delete: ";
         int pos;
         cin >> pos;
-        if (pos >= size(head))
+        if (pos >= size(head) && pos != 0)
             cout << endl
                  << "Invalid Index" << endl;
+        else if (pos == 0)
+            delete_head(head);
         else
             delete_at_position(head, pos);
     }
+
     // Print Linked List
     print_linked_list(head);
 

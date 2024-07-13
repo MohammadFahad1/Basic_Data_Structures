@@ -49,6 +49,29 @@ void insert_at_position(Node *head, int pos, int v)
     tmp->next = newNode;
 }
 
+void insert_at_head(Node *&head, int val)
+{
+    Node *newNode = new Node(val);
+    newNode->next = head;
+    head = newNode;
+    cout << endl
+         << "Inserted at Head" << endl;
+}
+
+void insert_at_tail(Node *&head, Node *&Tail, int val)
+{
+    Node *newNode = new Node(val);
+    if (head == NULL)
+    {
+        head = newNode;
+        Tail = newNode;
+    }
+    Tail->next = newNode;
+    Tail = newNode;
+    cout << endl
+         << "Inserted at Tail" << endl;
+}
+
 int main()
 {
     Node *head = new Node(5);
@@ -57,6 +80,7 @@ int main()
     Node *c = new Node(30);
     Node *d = new Node(40);
     Node *e = new Node(50);
+    Node *Tail = e;
 
     head->next = a;
     a->next = b;
@@ -70,7 +94,11 @@ int main()
     cin >> pos >> val;
     if (pos > size(head))
         cout << "Invalid Index";
-    else
+    else if (pos == 0)
+        insert_at_head(head, val);
+    else if (pos == size(head))
+        insert_at_tail(head, Tail, val);
+    else if (pos > 0 && pos <= size(head))
         insert_at_position(head, pos, val);
 
     print_linked_list(head);

@@ -91,6 +91,7 @@ void insert_tail(Node *&head, Node *&tail, int val)
     {
         head = newNode;
         tail = newNode;
+        return;
     }
     tail->next = newNode;
     newNode->prev = tail;
@@ -104,17 +105,11 @@ int main()
 
     while (true)
     {
-        int pos, val;
-        cin >> pos >> val;
+        int val;
+        cin >> val;
         if (val == -1)
             break;
-
-        if (pos == 0)
-            insert_head(head, tail, val);
-        else if (pos == size(head))
-            insert_tail(head, tail, val);
-        else
-            insert_at_position(head, pos, val);
+        insert_tail(head, tail, val);
     }
 
     print_normal(head);

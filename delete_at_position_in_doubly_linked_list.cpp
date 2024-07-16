@@ -64,9 +64,32 @@ void delete_at_position(Node *head, int pos)
     delete deleteNode;
 }
 
-void delete_head(Node *head, int pos)
+int size(Node *head)
 {
-    // Node *tmp =
+    Node *tmp = head;
+    int count = 0;
+    while (tmp != NULL)
+    {
+        count++;
+        tmp = tmp->next;
+    }
+    return count;
+}
+
+void delete_head(Node *&head)
+{
+    Node *deleteNode = head;
+    head = head->next;
+    delete deleteNode;
+    head->prev = NULL;
+}
+
+void delete_tail(Node *&tail)
+{
+    Node *deleteNode = tail;
+    tail = tail->prev;
+    delete deleteNode;
+    tail->next = NULL;
 }
 
 int main()
@@ -82,6 +105,19 @@ int main()
             break;
         insert_tail(head, tail, val);
     }
+
+    int pos;
+    cin >> pos;
+    if (pos != 0 && pos < size(head) - 1)
+        delete_at_position(head, pos);
+    else if (pos == 0)
+        delete_head(head);
+    else if (pos == size(head) - 1)
+    {
+        delete_tail(tail);
+    }
+    else
+        cout << "Invalid Index" << endl;
 
     print_normal(head);
     print_reverse(tail);

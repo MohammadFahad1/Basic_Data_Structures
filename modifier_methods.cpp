@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    list<int> myList = {10, 20, 30};
+    list<int> myList = {50, 10, 30, 10, 20, 30, 40, 60};
     // list<int> newList;
     /* newList = myList; // 1st way to assign */
     /* newList.assign(myList.begin(), myList.end()); // 2nd way to assign */
@@ -28,7 +28,7 @@ int main()
     //     cout << val << endl;
     // }
 
-    auto it = find(myList.begin(), myList.end(), 40);
+    /* auto it = find(myList.begin(), myList.end(), 40);
     if (it == myList.end())
     {
         cout << "Not Found" << endl;
@@ -36,7 +36,14 @@ int main()
     else
     {
         cout << "Found" << endl;
-    }
+    } */
+
+    // myList.remove(10);
+    // myList.sort(greater<int>());
+    // myList.sort();
+    // myList.unique();
+    // cout << myList.front() << endl;
+    cout << *next(myList.begin(), 7) << endl;
 
     return 0;
 }

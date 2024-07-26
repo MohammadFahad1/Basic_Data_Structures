@@ -1,4 +1,7 @@
-ong int i = 0; i < n; i++)
-    // {
-    //     cout << pre[i] << endl;
-    // }
+ocation == myList.end())
+            //     cout << "Not Available" << endl;
+            // else
+            // {
+            //     cLocation++;
+            //     cout << *cLocation << endl;
+            // }

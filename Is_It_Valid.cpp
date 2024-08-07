@@ -1,3 +1,5 @@
+// Problem Link: https://www.hackerrank.com/contests/assignment-03-a-basic-data-structure-a-batch-05/challenges/special-queries-1-1
+
 #include <bits/stdc++.h>
 using namespace std;
 

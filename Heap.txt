@@ -2,3 +2,10 @@
 - There are two types of heap
     1. Max Heap -> Always returns the biggest value. In the tree left and right children of a node must be smaller.
     2. Min Heap -> Always returns the smalles value. In the tree left and right children of a node must be larger.
+
+# Formula to reach the children and parent nodes in a complete bst.
+i*2+1 = Left Node
+i*2+2 = Right Node
+
+
+(i-1)/2 = Parent Node

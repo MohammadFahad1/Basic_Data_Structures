@@ -1,5 +1,2 @@
-empty() == false)
-    {
-        cout << st.top() << endl;
-        st.pop();
-    }
+
+    print_heap(v);

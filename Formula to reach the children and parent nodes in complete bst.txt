@@ -1,0 +1,5 @@
+i*2+1 = Left Node
+i*2+2 = Right Node
+
+
+(i-1)/2 = Parent Node

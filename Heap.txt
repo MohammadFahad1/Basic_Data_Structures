@@ -1,0 +1,4 @@
+# Heap
+- There are two types of heap
+    1. Max Heap -> Always returns the biggest value. In the tree left and right children of a node must be smaller.
+    2. Min Heap -> Always returns the smalles value. In the tree left and right children of a node must be larger.
